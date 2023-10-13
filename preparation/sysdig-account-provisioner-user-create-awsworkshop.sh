@@ -13,11 +13,10 @@
 
 set -euxo pipefail
 
-if [ $# -ne 6 ]
+if [ $# -ne 3 ]
   then
     echo "$0: Provide 6 arguments: Monitor API token, Monitor API URL, Secure API token, Secure API URL, Agent Key, region number (see init.sh)"
     echo "$0: Defaulting to training account."
-    return 1
 else
     ACCOUNT_PROVISIONER_MONITOR_API_TOKEN=$1
     ACCOUNT_PROVISIONER_MONITOR_API_URL=$2
