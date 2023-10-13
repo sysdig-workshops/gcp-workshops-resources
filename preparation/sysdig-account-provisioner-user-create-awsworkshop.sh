@@ -13,17 +13,17 @@
 
 set -euxo pipefail
 
-if [ $# -ne 3 ]
+if [ $# -ne 2 ]
   then
-    echo "$0: Provide 6 arguments: Monitor API token, Monitor API URL, Secure API token, Secure API URL, Agent Key, region number (see init.sh)"
-    echo "$0: Defaulting to training account."
+      echo "$0: Not enough params"
+
 else
     ACCOUNT_PROVISIONER_MONITOR_API_TOKEN=$1
     ACCOUNT_PROVISIONER_MONITOR_API_URL=$2
-    ACCOUNT_PROVISIONER_SECURE_API_TOKEN=$3
-    ACCOUNT_PROVISIONER_SECURE_API_URL=$4
-    ACCOUNT_PROVISIONER_AGENT_ACCESS_KEY=$5
-    ACCOUNT_PROVISIONER_REGION_NUMBER=$6
+    ACCOUNT_PROVISIONER_SECURE_API_TOKEN=$1
+    ACCOUNT_PROVISIONER_SECURE_API_URL=$2
+    ACCOUNT_PROVISIONER_AGENT_ACCESS_KEY=""
+    ACCOUNT_PROVISIONER_REGION_NUMBER=2
 fi
 
 WORK_DIR=/opt/sysdig
