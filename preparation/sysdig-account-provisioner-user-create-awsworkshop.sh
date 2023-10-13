@@ -13,7 +13,7 @@
 
 set -euxo pipefail
 
-if [ $# -ne 2 ]
+if [ $# -ne 1 ]
   then
       echo "$0: Not enough params"
 
