@@ -1,2 +1,2 @@
-# AWS-workshops
-Resources for AWS workshops
+# GCP-workshops
+Resources for GCP workshops
