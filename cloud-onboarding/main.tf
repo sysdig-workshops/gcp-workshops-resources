@@ -26,16 +26,16 @@ variable "PROJECT_ID" {
 
 provider "sysdig" {
   sysdig_secure_url       = "https://app.us4.sysdig.com"
-  sysdig_secure_api_token = SYSDIG_TOKEN
+  sysdig_secure_api_token = var.SYSDIG_TOKEN
 }
 
 provider "google" {
-  project = TF_VAR_PROJECT_ID
+  project = var.PROJECT_ID
   region  = "us-central1"
 }
 
 provider "google-beta" {
-  project = PROJECT_ID
+  project = var.PROJECT_ID
   region  = "us-central1"
 }
 
