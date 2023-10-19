@@ -14,9 +14,19 @@ terraform {
   }
 }
 
+variable "SYSDIG_TOKEN" {
+  type = string
+  description = "TF_VAR_SYSDIG_TOKEN environment var"
+}
+
+variable "PROJECT_ID" {
+  type = string
+  description = "TF_VAR_PROJECT_ID environment var"
+}
+
 provider "sysdig" {
   sysdig_secure_url       = "https://app.us4.sysdig.com"
-  sysdig_secure_api_token = TF_VAR_SYSDIG_TOKEN
+  sysdig_secure_api_token = SYSDIG_TOKEN
 }
 
 provider "google" {
@@ -25,7 +35,7 @@ provider "google" {
 }
 
 provider "google-beta" {
-  project = TF_VAR_PROJECT_ID
+  project = PROJECT_ID
   region  = "us-central1"
 }
 
